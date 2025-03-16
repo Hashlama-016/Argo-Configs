@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: team-ares
-  namespace: argocd
+  namespace: team-ares-prod
 spec:
   project: default
   source:
@@ -16,5 +16,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
