@@ -15,11 +15,3 @@ The **"App of Apps"** pattern is a deployment strategy that uses a **parent appl
 ## 🚀 Usage
 
 This repository serves as a central control point for deploying and managing multiple applications in your Kubernetes cluster. The `applications.yaml` file acts as the entry point that ArgoCD uses to synchronize all child applications.
-
-### 🏁 Getting Started
-
-1. Ensure you have **ArgoCD** installed in your cluster. 🚨
-2. Apply the `applications.yaml` manifest to register this repository with ArgoCD:
-
-```bash
-kubectl apply -f applications.yaml
