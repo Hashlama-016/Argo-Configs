@@ -10,7 +10,7 @@ spec:
     targetRevision: main
     path: services/rabbitmq
   destination:
-    server: http://kubernetes.default.svc
+    server: https://kubernetes.default.svc
     namespace: rabbitmq-prod
   syncPolicy:
     automated:
