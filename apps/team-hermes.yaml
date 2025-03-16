@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/your-org/argo-configs.git
+    repoURL: https://github.com/Hashlama-016/Argo-Configs.git
     targetRevision: main
     path: services/team-hermes
   destination:
