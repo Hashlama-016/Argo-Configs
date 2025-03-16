@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: team-athena
+  namespace: argocd
+spec:
+  project: teams
+  source:
+    repoURL: https://github.com/your-org/argo-configs.git
+    targetRevision: main
+    path: services/team-athena
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: team-athena-prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

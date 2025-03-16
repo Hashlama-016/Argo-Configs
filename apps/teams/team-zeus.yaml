@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: team-zeus
+  namespace: argocd
+spec:
+  project: teams
+  source:
+    repoURL: https://github.com/your-org/argo-configs.git
+    targetRevision: main
+    path: services/team-zeus
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: team-zeus-prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
