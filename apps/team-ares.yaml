@@ -10,7 +10,7 @@ spec:
     targetRevision: main  
     path: services/team-ares
   destination:
-    server: https://kubernetes.default.svc
+    server: https://api.hashlama016-black-openshift.bsmch.net:6443
     namespace: team-ares-prod
   syncPolicy:
     automated:
