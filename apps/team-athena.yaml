@@ -4,7 +4,7 @@ metadata:
   name: team-athena
   namespace: argocd
 spec:
-  project: teams
+  project: default
   source:
     repoURL: https://github.com/your-org/argo-configs.git
     targetRevision: main
