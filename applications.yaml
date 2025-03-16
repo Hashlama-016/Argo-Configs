@@ -10,7 +10,7 @@ spec:
     targetRevision: main
     path: apps
   destination:
-    server: https://kubernetes.default.svc
+    server: https://api.hashlama016-black-openshift.bsmch.net:6443
     namespace: argocd
   syncPolicy:
     automated:
