@@ -1,0 +1,15 @@
+{{- range .Values.teams }}
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: {{ . }}
+  namespace: {{ . }}
+spec:
+  hard:
+    requests.cpu: "30m"
+    requests.memory: "0.2Gi"
+    limits.cpu: "250m"
+    limits.memory: "0.8Gi"
+    pods: "10"
+---
+{{- end }}
