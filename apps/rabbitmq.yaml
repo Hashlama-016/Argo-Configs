@@ -6,11 +6,11 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: in-cluster
+    repoURL: https://github.com/Hashlama-016/Argo-Configs.git
     targetRevision: main
     path: services/rabbitmq
   destination:
-    server: https://api.hashlama016-black-openshift.bsmch.net:6443
+    server: in-cluster
     namespace: rabbitmq-prod
   syncPolicy:
     automated:
