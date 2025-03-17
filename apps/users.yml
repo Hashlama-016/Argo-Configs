@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: htpasswd-secret-application
-  namespace: argocd
+  namespace: openshift-gitops
 spec:
   destination:
     name: ''
