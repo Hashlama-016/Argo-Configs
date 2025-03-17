@@ -8,9 +8,9 @@ spec:
     namespace: default
     server: https://kubernetes.default.svc
   source:
-    path: rbac
     repoURL: 'https://github.com/Hashlama-016/Argo-Configs'
     targetRevision: main
+    chart: rbac
   project: default
   syncPolicy:
     automated:

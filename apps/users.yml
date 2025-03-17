@@ -8,11 +8,11 @@ spec:
     namespace: default
     server: https://kubernetes.default.svc
   source:
-    path: users
     repoURL: 'https://github.com/Hashlama-016/Argo-Configs'
     targetRevision: main
+    chart: users
   project: default
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true
+      selfHeal: true 
