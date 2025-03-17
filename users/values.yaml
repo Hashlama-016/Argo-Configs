@@ -1,20 +1,20 @@
 users:
-  - name: airlow-team
+  - name: airflow
     password: hashlama123!@#
-  - name: artemis-team
+  - name: artemis
     password: hashlama123!@#
-  - name: portal-team
+  - name: portal
     password: hashlama123!@#
-  - name: exodus-team
+  - name: exodus
     password: hashlama123!@#
-  - name: nike-team
+  - name: nike
     password: hashlama123!@#
-  - name: poseidon-team
+  - name: poseidon
     password: hashlama123!@#
-  - name: talos-team
+  - name: talos
     password: hashlama123!@#
-  - name: typhon-team
+  - name: typhon
     password: hashlama123!@#
-  - name: thor-team
+  - name: thor
     password: hashlama123!@#
 secretName: htpasswd-secret
