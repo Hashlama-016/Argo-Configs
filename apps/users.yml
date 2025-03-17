@@ -1,15 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: htpasswd-secret-application
+  name: users-auth
   namespace: openshift-gitops
 spec:
   destination:
-    name: ''
     namespace: default
     server: https://kubernetes.default.svc
   source:
-    path: manifests
+    path: users
     repoURL: 'https://github.com/Hashlama-016/Argo-Configs'
     targetRevision: main
     chart: users

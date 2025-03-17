@@ -5,11 +5,10 @@ metadata:
   namespace: openshift-gitops
 spec:
   destination:
-    name: ''
     namespace: default
     server: https://kubernetes.default.svc
   source:
-    path: manifests
+    path: rbac
     repoURL: 'https://github.com/Hashlama-016/Argo-Configs'
     targetRevision: main
     chart: rbac
