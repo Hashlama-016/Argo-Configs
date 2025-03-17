@@ -11,7 +11,7 @@ spec:
   source:
     path: manifests
     repoURL: 'https://github.com/Hashlama-016/Argo-Configs'
-    targetRevision: HEAD
+    targetRevision: main
     chart: users
   project: default
   syncPolicy:
