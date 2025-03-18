@@ -8,13 +8,13 @@ spec:
     - list:
         elements:
           - team: airflow-team
-            namespace: airflow-team-prod
+            namespace: airflow-team
           - team: artemis-team
-            namespace: artemis-team-prod
+            namespace: artemis-team
           - team: portal-team
-            namespace: portal-team-prod
+            namespace: portal-team
           - team: exodus-team
-            namespace: exodus-team-prod
+            namespace: exodus-team
           - team: nike-team
             namespace: nike-team
           - team: poseidon-team
