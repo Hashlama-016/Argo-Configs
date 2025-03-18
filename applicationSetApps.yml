@@ -12,6 +12,7 @@ spec:
             url: https://github.com/Hashlama-016/Exodus-team.git
             branch: airflow
             path: airflow
+            project: airflow
   template:
     apiVersion: argoproj.io/v1alpha1
     kind: Application
@@ -19,7 +20,7 @@ spec:
       name: "{{team}}"
       namespace: openshift-gitops  
     spec:
-      project: default
+      project: "{{team}}"
       source:
         repoURL: "{{url}}"
         targetRevision: "{{branch}}"
