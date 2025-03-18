@@ -10,12 +10,12 @@ data:
   policy.default: ''
   scopes: '[groups]'
   rbac.yaml: |
-    {{- range .Values.groups }}
-    # Grant {{ .name }} admin access to the {{ .namespace }} namespace
-    p, role:{{ $.Values.role }}, applications, get, {{ .namespace }}/*, allow
-    p, role:{{ $.Values.role }}, applications, list, {{ .namespace }}/*, allow
-    p, role:{{ $.Values.role }}, applications, sync, {{ .namespace }}/*, allow
-    p, role:{{ $.Values.role }}, applications, create, {{ .namespace }}/*, allow
-    p, role:{{ $.Values.role }}, applications, delete, {{ .namespace }}/*, allow
-    g, {{ .name }}, role:{{ $.Values.role }}
+    {{- range .Values.teams }}
+    # Grant {{ . }} admin access to the {{ . }} namespace
+    p, role:{{ $.Values.role }}, applications, get, {{ . }}/*, allow
+    p, role:{{ $.Values.role }}, applications, list, {{ . }}/*, allow
+    p, role:{{ $.Values.role }}, applications, sync, {{ . }}/*, allow
+    p, role:{{ $.Values.role }}, applications, create, {{ . }}/*, allow
+    p, role:{{ $.Values.role }}, applications, delete, {{ . }}/*, allow
+    g, {{ . }}, role:{{ $.Values.role }}
     {{- end }}
