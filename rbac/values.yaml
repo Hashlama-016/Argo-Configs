@@ -12,4 +12,5 @@ teams:
   - athena-team 
   - hermes-team
   - zeus-team
+  - web-test
 role: admin 
