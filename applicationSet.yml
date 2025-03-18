@@ -16,23 +16,23 @@ spec:
           - team: exodus-team
             namespace: exodus-team-prod
           - team: nike-team
-            namespace: nike-team-prod
+            namespace: nike-team
           - team: poseidon-team
-            namespace: poseidon-team-prod
+            namespace: poseidon-team
           - team: talos-team
-            namespace: talos-team-prod
+            namespace: talos-team
           - team: typhon-team
-            namespace: typhon-team-prod
+            namespace: typhon-team
           - team: thor-team
-            namespace: thor-team-prod
+            namespace: thor-team
           - team: ares-team
-            namespace: ares-team-prod
+            namespace: ares-team
           - team: athena-team
-            namespace: athena-team-prod
+            namespace: athena-team
           - team: hermes-team
-            namespace: hermes-team-prod
+            namespace: hermes-team
           - team: zeus-team
-            namespace: zeus-team-prod
+            namespace: zeus-team
   template:
     apiVersion: argoproj.io/v1alpha1
     kind: Application
