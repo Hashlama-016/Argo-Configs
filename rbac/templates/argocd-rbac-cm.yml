@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-rbac-cm
+  namespace: openshift-gitops
+data:
+  policy.csv: |
+    g, system:cluster-admins, role:admin
+    g, cluster-admins, role:admin
+  policy.default: ''
+  scopes: '[groups]'
+  rbac.yaml: |
+    {{- range .Values.groups }}
+    # Grant {{ .name }} admin access to the {{ .namespace }} namespace
+    p, role:{{ $.Values.role }}, applications, get, {{ .namespace }}/*, allow
+    p, role:{{ $.Values.role }}, applications, list, {{ .namespace }}/*, allow
+    p, role:{{ $.Values.role }}, applications, sync, {{ .namespace }}/*, allow
+    p, role:{{ $.Values.role }}, applications, create, {{ .namespace }}/*, allow
+    p, role:{{ $.Values.role }}, applications, delete, {{ .namespace }}/*, allow
+    g, {{ .name }}, role:{{ $.Values.role }}
+    {{- end }}
