@@ -7,8 +7,21 @@ data:
   policy.csv: |-
     g, system:cluster-admins, role:admin
     g, cluster-admins, role:admin
-{{- range .Values.teams }}
-    p, {{ . }}, proj:default, role:admin
-{{- end }}
+    p, airflow-team, proj:default, role:admin
+    p, artemis-team, proj:default, role:admin
+    p, portal-team, proj:default, role:admin
+    p, exodus-team, proj:default, role:admin
+    p, nike-team, proj:default, role:admin
+    p, poseidon-team, proj:default, role:admin
+    p, talos-team, proj:default, role:admin
+    p, typhon-team, proj:default, role:admin
+    p, thor-team, proj:default, role:admin
+    p, ares-team, proj:default, role:admin
+    p, athena-team, proj:default, role:admin
+    p, hermes-team, proj:default, role:admin
+    p, zeus-team, proj:default, role:admin
+#{{- range .Values.teams }}
+ #   p, {{ . }}, proj:default, role:admin
+#{{- end }}
   policy.default: ''
   scopes: '[groups]'
