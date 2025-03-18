@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: my-appset
+  namespace: openshift-gitops
+spec:
+  generators:
+    - list:
+        elements:
+          - name: rbac-application
+            path: rbac
+          - name: users-auth
+            path: users
+  template:
+    apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: "{{name}}"
+      namespace: openshift-gitops
+    spec:
+      project: default
+      source:
+        repoURL: 'https://github.com/Hashlama-016/Argo-Configs.git'
+        targetRevision: main
+        path: "{{path}}"  # Dynamically set the path based on the list element
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
