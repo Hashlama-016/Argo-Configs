@@ -8,7 +8,7 @@ data:
     g, system:cluster-admins, role:admin
     g, cluster-admins, role:admin
 {{- range .Values.teams }}
-    g, {{ . }}, proj:default, role:admin
+    p, {{ . }}, proj:default, role:admin
 {{- end }}
   policy.default: ''
   scopes: '[groups]'
