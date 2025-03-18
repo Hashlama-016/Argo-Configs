@@ -17,4 +17,12 @@ users:
     password: hashlama123!@#
   - name: thor
     password: hashlama123!@#
+  - name: ares
+    password: hashlama123!@#
+  - name: athena
+    password: hashlama123!@#
+  - name: hermes
+    password: hashlama123!@#
+  - name: zeus
+    password: hashlama123!@#
 secretName: htpasswd-secret
