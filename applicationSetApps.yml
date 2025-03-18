@@ -9,30 +9,9 @@ spec:
         elements:
           - team: airflow-team
             namespace: airflow-team
-          - team: artemis-team
-            namespace: artemis-team
-          - team: portal-team
-            namespace: portal-team
-          - team: exodus-team
-            namespace: exodus-team
-          - team: nike-team
-            namespace: nike-team
-          - team: poseidon-team
-            namespace: poseidon-team
-          - team: talos-team
-            namespace: talos-team
-          - team: typhon-team
-            namespace: typhon-team
-          - team: thor-team
-            namespace: thor-team
-          - team: ares-team
-            namespace: ares-team
-          - team: athena-team
-            namespace: athena-team
-          - team: hermes-team
-            namespace: hermes-team
-          - team: zeus-team
-            namespace: zeus-team
+            url: https://github.com/Hashlama-016/Exodus-team/tree/airflow
+            branch: airflow
+            path: airflow
   template:
     apiVersion: argoproj.io/v1alpha1
     kind: Application
@@ -42,9 +21,9 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/Hashlama-016/Argo-Configs.git
-        targetRevision: main
-        path: services/{{team}}
+        repoURL: "{{url}}"
+        targetRevision: "{{branch}}"
+        path: "{{path}}"
       destination:
         server: https://kubernetes.default.svc
         namespace: "{{namespace}}"
