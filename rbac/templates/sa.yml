@@ -8,6 +8,8 @@ items:
     metadata:
       name: {{ . }}-sa
       namespace: {{ . }}
+    imagePullSecrets:
+      - name: quay-secret
   - apiVersion: authorization.openshift.io/v1
     kind: RoleBinding
     metadata:
