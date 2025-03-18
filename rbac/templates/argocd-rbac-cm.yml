@@ -4,13 +4,11 @@ metadata:
   name: argocd-rbac-cm
   namespace: openshift-gitops
 data:
-  policy.csv: |
+  policy.csv: |-
     g, system:cluster-admins, role:admin
     g, cluster-admins, role:admin
-    {{- range .Values.teams }}
-    # Grant {{ . }} admin access to the {{ . }} namespace
+{{- range .Values.teams }}
     g, {{ . }}, role:admin
-    {{- end }}
+{{- end }}
   policy.default: ''
   scopes: '[groups]'
- 
