@@ -4,24 +4,18 @@ metadata:
   name: argocd-rbac-cm
   namespace: openshift-gitops
 data:
-  policy.csv: |-
+  policy.csv: |
     g, system:cluster-admins, role:admin
     g, cluster-admins, role:admin
-    p, airflow-team, proj:default, role:admin
-    p, artemis-team, proj:default, role:admin
-    p, portal-team, proj:default, role:admin
-    p, exodus-team, proj:default, role:admin
-    p, nike-team, proj:default, role:admin
-    p, poseidon-team, proj:default, role:admin
-    p, talos-team, proj:default, role:admin
-    p, typhon-team, proj:default, role:admin
-    p, thor-team, proj:default, role:admin
-    p, ares-team, proj:default, role:admin
-    p, athena-team, proj:default, role:admin
-    p, hermes-team, proj:default, role:admin
-    p, zeus-team, proj:default, role:admin
-#{{- range .Values.teams }}
- #   p, {{ . }}, proj:default, role:admin
-#{{- end }}
   policy.default: ''
   scopes: '[groups]'
+  rbac.yaml: |
+    {{- range .Values.teams }}
+    # Grant {{ . }} admin access to the {{ . }} namespace
+    p, role:{{ $.Values.role }}, applications, get, {{ . }}/*, allow
+    p, role:{{ $.Values.role }}, applications, list, {{ . }}/*, allow
+    p, role:{{ $.Values.role }}, applications, sync, {{ . }}/*, allow
+    p, role:{{ $.Values.role }}, applications, create, {{ . }}/*, allow
+    p, role:{{ $.Values.role }}, applications, delete, {{ . }}/*, allow
+    g, {{ . }}, role:{{ $.Values.role }}
+    {{- end }}
