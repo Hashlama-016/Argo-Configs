@@ -6,8 +6,6 @@ metadata:
   namespace: {{ . }}
 spec:
   hard:
-    requests.cpu: "30m"
-    requests.memory: "0.2Gi"
     limits.cpu: "250m"
     limits.memory: "0.8Gi"
     pods: "50"
