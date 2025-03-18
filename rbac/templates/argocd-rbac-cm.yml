@@ -7,10 +7,10 @@ data:
   policy.csv: |
     g, system:cluster-admins, role:admin
     g, cluster-admins, role:admin
-  policy.default: ''
-  scopes: '[groups]'
-  rbac.yaml: |
     {{- range .Values.teams }}
     # Grant {{ . }} admin access to the {{ . }} namespace
     g, {{ . }}, role:admin
     {{- end }}
+  policy.default: ''
+  scopes: '[groups]'
+ 
