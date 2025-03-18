@@ -23,4 +23,5 @@ spec:
         - p, proj:{{ . }}:{{ . }}-team, applications, sync, {{ . }}/*, allow
       groups:
         - "{{ . }}-team"
+---
 {{- end }}
