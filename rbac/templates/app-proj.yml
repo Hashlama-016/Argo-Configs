@@ -17,11 +17,11 @@ spec:
     - group: '*'
       kind: '*'
   roles:
-    - name: "{{ . }}-team"
+    - name: "{{ . }}-role"
       policies:
-        - p, proj:{{ . }}:{{ . }}-team, applications, get, {{ . }}/*, allow
-        - p, proj:{{ . }}:{{ . }}-team, applications, sync, {{ . }}/*, allow
+        - p, proj:{{ . }}:{{ . }}, applications, get, {{ . }}/*, allow
+        - p, proj:{{ . }}:{{ . }}, applications, sync, {{ . }}/*, allow
       groups:
-        - "{{ . }}-team"
+        - "{{ . }}"
 ---
 {{- end }}
