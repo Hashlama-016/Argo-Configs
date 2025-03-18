@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: teams-appset
-  namespace: openshift-gitops
+  namespace: openshift-gitops 
 spec:
   generators:
     - list:
@@ -14,52 +14,22 @@ spec:
             path: airflow
   template:
     apiVersion: argoproj.io/v1alpha1
-    kind: List  # Creating multiple resources: AppProject and Application
+    kind: Application
     metadata:
-      name: "{{team}}-resources"
-      namespace: openshift-gitops
-    items:
-      - apiVersion: argoproj.io/v1alpha1
-        kind: AppProject
-        metadata:
-          name: "{{team}}"
-          namespace: openshift-gitops
-        spec:
-          sourceRepos:
-            - "*"
-          destinations:
-            - namespace: "{{namespace}}"
-              server: https://kubernetes.default.svc
-          clusterResourceWhitelist:
-            - group: '*'
-              kind: '*'
-          namespaceResourceWhitelist:
-            - group: '*'
-              kind: '*'
-          roles:
-            - name: "{{team}}-admin"
-              policies:
-                - p, proj:{{team}}:{{team}}-admin, applications, get, {{team}}/*, allow
-                - p, proj:{{team}}:{{team}}-admin, applications, sync, {{team}}/*, allow
-              groups:
-                - "{{team}}-group"
-      - apiVersion: argoproj.io/v1alpha1
-        kind: Application
-        metadata:
-          name: "{{team}}"
-          namespace: openshift-gitops
-        spec:
-          project: "{{team}}"  # Reference the AppProject created above
-          source:
-            repoURL: "{{url}}"
-            targetRevision: "{{branch}}"
-            path: "{{path}}"
-          destination:
-            server: https://kubernetes.default.svc
-            namespace: "{{namespace}}"
-          syncPolicy:
-            automated:
-              prune: true
-              selfHeal: true
-            syncOptions:
-              - CreateNamespace=true
+      name: "{{team}}"
+      namespace: openshift-gitops  
+    spec:
+      project: default
+      source:
+        repoURL: "{{url}}"
+        targetRevision: "{{branch}}"
+        path: "{{path}}"
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "{{namespace}}"
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
