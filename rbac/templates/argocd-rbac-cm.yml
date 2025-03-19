@@ -8,7 +8,7 @@ data:
     g, system:cluster-admins, role:admin
     g, cluster-admins, role:admin
 {{- range .Values.teams }}
-    p, role:{{ . }}-role, *, *, airflow-team/*, allow
+    p, role:{{ . }}-role, *, *, {{ . }}/*, allow
     p, role:{{ . }}-role, projects, get, {{ . }}, allow
     g, {{ . }}, role:{{ . }}-role
 {{- end }}
