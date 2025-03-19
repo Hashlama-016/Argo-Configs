@@ -6,7 +6,7 @@ metadata:
   namespace: {{ . }}
 spec:
   hard:
-    limits.cpu: "250m"
+    limits.cpu: "600m"
     limits.memory: "0.8Gi"
     pods: "50"
 ---
@@ -19,7 +19,7 @@ spec:
   limits:
     - type: Container
       default:
-        cpu: 250m
+        cpu: 600m
         memory: 0.8Gi
 ---
 {{- end }}
