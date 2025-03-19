@@ -1,0 +1,6 @@
+ - team: airflow-team
+   namespace: airflow-team
+   url: https://github.com/Hashlama-016/Exodus-team.git
+   branch: airflow
+   path: airflow
+   project: airflow
