@@ -6,7 +6,7 @@ metadata:
   namespace: {{ . }}
 spec:
   hard:
-    limits.cpu: "600m"
+    limits.cpu: "1"
     limits.memory: "2.75Gi"
     pods: "50"
 ---
