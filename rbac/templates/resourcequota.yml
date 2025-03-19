@@ -9,12 +9,12 @@ spec:
   # No hard limits specified
   # But we can still define limits per team
   {{- if or (eq . "airflow") (eq . "portal") (eq . "image-builder") }}
-  limits.cpu: "8"
-  limits.memory: "16Gi"
+  limits.cpu: "1.5"
+  limits.memory: "8Gi"
   pods: "100"
   {{- else }}
-  limits.cpu: "4"
-  limits.memory: "8Gi"
+  limits.cpu: "0.4"
+  limits.memory: "3Gi"
   pods: "50"
   {{- end }}
 {{- end }}
