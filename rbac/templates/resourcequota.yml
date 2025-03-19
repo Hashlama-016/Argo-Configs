@@ -7,7 +7,7 @@ metadata:
 spec:
   hard:
     limits.cpu: "600m"
-    limits.memory: "0.8Gi"
+    limits.memory: "2.75Gi"
     pods: "50"
 ---
 apiVersion: v1
