@@ -5,11 +5,14 @@ metadata:
   namespace: openshift-gitops 
 spec:
   generators:
-    - git:
-        repoURL: https://github.com/Hashlama-016/Argo-Configs.git
-        targetRevision: main
-        files:
-          - path: "teams/teams.yml"  
+    - list: 
+        elements:
+          - team: airflow
+            namespace: airflow
+            url: https://github.com/Hashlama-016/Exodus-team.git
+            branch: airflow
+            path: airflow
+            project: airflow
   template:
     apiVersion: argoproj.io/v1alpha1
     kind: Application
