@@ -27,6 +27,6 @@ users:
     password: hashlama123!@#
   - name: harbor
     password: hashlama123!@#
-  - name: image-build
+  - name: image-builder
     password: hashlama123!@#
 secretName: htpasswd-secret
