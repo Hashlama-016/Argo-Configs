@@ -7,7 +7,7 @@ metadata:
 spec:
   hard:
     limits.cpu: "1"
-    limits.memory: "2.75Gi"
+    limits.memory: "3.55Gi"
     pods: "50"
 ---
 apiVersion: v1
@@ -20,6 +20,6 @@ spec:
     - type: Container
       default:
         cpu: 1m
-        memory: 2.75Gi
+        memory: 3.5Gi
 ---
 {{- end }}
