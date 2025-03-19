@@ -19,8 +19,7 @@ spec:
   roles:
     - name: "{{ . }}-role"
       policies:
-        - p, proj:{{ . }}:{{ . }}, applications, get, {{ . }}/*, allow
-        - p, proj:{{ . }}:{{ . }}, applications, sync, {{ . }}/*, allow
+        - p, proj:{{ . }}:{{ . }}, * , * , {{ . }}/*, allow
       groups:
         - "{{ . }}"
 ---
