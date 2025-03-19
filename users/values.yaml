@@ -25,4 +25,6 @@ users:
     password: hashlama123!@#
   - name: zeus
     password: hashlama123!@#
+  - name: harbor
+    password: hashlama123!@#
 secretName: htpasswd-secret
