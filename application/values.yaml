@@ -1,3 +1,4 @@
  teams:
   - name: adi
     image: quay.io/redhattraining/hello-world-nginx
+    port: 8080
