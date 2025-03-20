@@ -15,7 +15,7 @@ spec:
             project: airflow
           - team: portal
             namespace: portal
-            url: https://10.50.1.4/Hashlama_2/developer-portal.git
+            url: http://10.50.1.4/Hashlama_2/developer-portal.git
             branch: main
             path: helm-app
             project: portal 
