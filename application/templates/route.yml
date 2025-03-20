@@ -1,0 +1,17 @@
+{{- range .Values.teams }}
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ .name }}-route
+  namespace: {{ .name }}
+spec:
+  to:
+    kind: Service
+    name: {{ .name }}-svc
+    weight: 100
+  port:
+    targetPort: {{ .port }}
+  tls:
+    termination: edge
+  wildcardPolicy: None
