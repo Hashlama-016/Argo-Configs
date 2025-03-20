@@ -13,7 +13,7 @@ spec:
   limits.memory: "8Gi"
   pods: "100"
   {{- else }}
-  limits.cpu: "0.4"
+  limits.cpu: "0.5"
   limits.memory: "3Gi"
   pods: "50"
   {{- end }}
