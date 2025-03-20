@@ -1,0 +1,3 @@
+ teams:
+  - name: adi
+    image: quay.io/nginx:latest   
