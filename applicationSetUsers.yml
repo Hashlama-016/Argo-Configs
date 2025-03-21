@@ -22,7 +22,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: 'https://github.com/Hashlama-016/Argo-Configs-Red.git'
+        repoURL: 'https://github.com/Hashlama-016/Argo-Configs.git'
         targetRevision: main
         path: "{{path}}"  # Dynamically set the path based on the list element
       destination:
