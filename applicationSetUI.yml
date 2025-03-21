@@ -2,20 +2,18 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: customization-appset
-  namespace: openshift-config 
+  namespace: openshift-gitops  # Check if this is the correct namespace
 spec:
   generators:
-    - list: 
+    - list:
         elements:
-          - team: openshift-customization
+          - branch: main
             namespace: openshift-config
-            url: https://github.com/Hashlama-016/Argo-Configs.git
-            branch: main
             path: openshift-customization
             project: default
+            team: openshift-customization
+            url: https://github.com/Hashlama-016/Argo-Configs.git
   template:
-    apiVersion: argoproj.io/v1alpha1
-    kind: Application
     metadata:
       name: "{{team}}"
       namespace: "{{namespace}}"
@@ -26,7 +24,7 @@ spec:
         targetRevision: "{{branch}}"
         path: "{{path}}"
       destination:
-        server: https://kubernetes.default.svc
+        server: "https://kubernetes.default.svc"
         namespace: "{{namespace}}"
       syncPolicy:
         automated:
