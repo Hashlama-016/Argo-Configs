@@ -7,7 +7,7 @@ spec:
   generators:
     - list: 
         elements:
-          - team: airflow
+          - team: openshift-customization
             namespace: openshift-config
             url: https://github.com/Hashlama-016/Argo-Configs.git
             branch: main
