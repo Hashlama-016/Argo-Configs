@@ -11,6 +11,8 @@ spec:
             path: rbac
           - name: users-auth
             path: users
+          - name: customization
+            path: openshift-customization
   template:
     apiVersion: argoproj.io/v1alpha1
     kind: Application
@@ -20,7 +22,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: 'https://github.com/Hashlama-016/Argo-Configs.git'
+        repoURL: 'https://github.com/Hashlama-016/Argo-Configs-Red.git'
         targetRevision: main
         path: "{{path}}"  # Dynamically set the path based on the list element
       destination:

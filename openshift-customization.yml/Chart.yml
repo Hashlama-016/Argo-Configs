@@ -1,0 +1,5 @@
+apiVersion: v2
+name: openshift-branding
+description: A Helm chart for customizing OpenShift branding
+version: 0.1.0
+appVersion: 4.x
