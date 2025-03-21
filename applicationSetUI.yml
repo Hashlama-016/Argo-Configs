@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: customization-appset
+  namespace: openshift-config 
+spec:
+  generators:
+    - list: 
+        elements:
+          - team: airflow
+            namespace: openshift-config
+            url: https://github.com/Hashlama-016/Argo-Configs.git
+            branch: main
+            path: openshift-customization
+            project: default
+  template:
+    apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: "{{team}}"
+      namespace: "{{namespace}}"
+    spec:
+      project: "{{team}}"
+      source:
+        repoURL: "{{url}}"
+        targetRevision: "{{branch}}"
+        path: "{{path}}"
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "{{namespace}}"
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
