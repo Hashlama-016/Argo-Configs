@@ -31,6 +31,9 @@ spec:
         repoURL: "{{url}}"
         targetRevision: "{{branch}}"
         path: "{{path}}"
+        helm:
+          valueFiles:
+            - values.yaml
       destination:
         server: https://kubernetes.default.svc
         namespace: "{{namespace}}"
