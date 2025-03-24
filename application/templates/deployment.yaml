@@ -15,11 +15,14 @@ spec:
       labels:
         app: {{ .name }}
     spec:
+      serviceAccountName: {{ .name }}-sa
+      SecurityContext:
+        runAsUser: 0
       imagePullSecrets:
         - name: quay-secret
       containers:
         - name: {{ .name }}
           image: {{ .image }}
           ports:
-            - containerPort: 8080
+            - containerPort: {{ .port }}
 {{- end }}
